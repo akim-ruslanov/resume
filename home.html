@@ -7,31 +7,62 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="nav-bar.js"></script>
+  <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body>
+
+<!-- nav bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="home.html">Personal Website</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="home.html">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">CS Projects <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="rock-paper-scissors.html">Rock-Paper-Scissors</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">photography</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- end of nav bar-->
 
 <div class="jumbotron text-center">
   <h1>Akim Ruslanov</h1>
   <p>Currently Enrolled in BSc Computer Science and Statistics Combined Major UBC Vancouver, Canada</p> 
 </div>
-  
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    <div class="col-sm-6">
+      <a href = "csProjects.html"><h3>Computer Science Projects</h3></a>
+      <p>Please have a look at some of my computer science related projects ranging from simple Java games to utility web apps.</p>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    <div class="col-sm-6">
+      <h3>Personal Hobies</h3>
+      <p>I also do some photography on the side. Please have a look at some of photos!</p>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12">
+          <h3>How I built this page?</h3>
+          <p>This page was made from scratch using HTML, CSS, JavaScript and libraries such as <mark>Bootstrap</mark></p>
+          <p>As I am progressing, more projects and more things will be added to the website. So please visit frequently!</p>
+          
+      </div>
   </div>
 </div>
 

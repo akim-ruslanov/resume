@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="nav-bar.js"></script>
+  <link rel="stylesheet" type="text/css" href="home.css">
+
+  <style>
+      .selection {
+          width: 200;
+          height: 200px;
+      }
+  </style>
+</head>
+<body>
+
+<!-- nav bar -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="home.html">Personal Website</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="home.html">Home</a></li>
+          <li class="active dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">CS Projects <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="active"><a href="rock-paper-scissors.html">Rock Paper Scissors</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">photography</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- end of nav bar-->
+
+<script>
+    const selections = {
+        ROCK: "rock",
+        SCISSORS: "scissors",
+        PAPER: "paper"
+    }
+    const gameStates = {
+        DRAW: "draw",
+        LOSE: "computer wins",
+        WIN: "player wins"
+    }
+    function playRound(playerSelection, computerSelection) {
+        if (!playerSelection && !computerSelection) {
+            throw new Error("Undefined parameters")
+        }
+        if (playerSelection === computerSelection) {
+            return gameStates.DRAW
+        }
+        switch(playerSelection) {
+            case (selections.PAPER):
+                if (computerSelection ===  selections.ROCK)
+                    return gameStates.WIN
+                else
+                    return gameStates.LOSE
+            case (selections.ROCK):
+                if (computerSelection === selections.SCISSORS) 
+                    return gameStates.WIN
+                else
+                    return gameStates.LOSE
+            case (selections.SCISSORS | selections.ROCK): 
+                if (computerSelection === selections.PAPER) 
+                    return gameStates.WIN
+                else
+                    return gameStates.LOSE
+                return gameStates.LOSE
+        }
+    }
+
+    function changeCompPic(computerSelection) {
+        switch(computerSelection) {
+            case selections.ROCK:
+                document.getElementById("computerSelection").src = "images/rock.png"
+                break
+            case selections.PAPER:
+                document.getElementById("computerSelection").src = "images/paper.png"
+                break 
+            case selections.SCISSORS:
+                document.getElementById("computerSelection").src = "images/scissors.png"
+                break
+        }
+    }
+
+    function alertPlayer(game) {
+        switch (game) {
+            case gameStates.DRAW:
+                console.log("draw")
+                break
+            case gameStates.LOSE:
+                // alert("You lost")
+                console.log("you lost")
+                break
+            case gameStates.WIN:
+                // alert("You won")
+                console.log("You won")
+                break
+        }
+    }
+
+    function choosePaper() {
+        playerSelection = selections.PAPER
+        changeCompPic(computerSelection = computerPlay());
+        alertPlayer(playRound(playerSelection, computerSelection));
+    }
+
+    function chooseRock() {
+        playerSelection = selections.ROCK
+        changeCompPic(computerSelection = computerPlay());
+        alertPlayer(playRound(playerSelection, computerSelection));
+    }
+
+    function chooseScissors() {
+        playerSelection = selections.SCISSORS
+        changeCompPic(computerSelection = computerPlay());
+        alertPlayer(playRound(playerSelection, computerSelection));
+    }
+
+    function computerPlay() {
+        const randPlay = Math.floor(Math.random() * (4))
+        switch(randPlay) {
+            case 1:
+                return selections.ROCK
+            case 2:
+                return selections.PAPER
+            case 3:
+                return selections.SCISSORS
+        }
+    }
+    let playerSelection;
+    let computerSelection;
+</script>
+
+<div class="jumbotron text-center">
+    <h1>Rock-Paper-Scissors Game</h1>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm-4" style="text-align: center;">
+        <input type="image" src="images/rock.png" name="saveForm" class="selection" id="rock"  onclick="chooseRock()" />
+    </div>
+    <div class="col-sm-4" style="text-align: center;">
+        <input type="image" src="images/paper.png" name="saveForm" class="selection" id="paper" onclick="choosePaper()" />
+    </div>
+    <div class="col-sm-4" style="text-align: center;">
+        <input type="image" src="images/scissors.png" name="saveForm" class="selection" id="scissors" onclick="chooseScissors()" />
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-sm-4 offset-md-4" style="text-align: center;">
+    </div>
+    <div class="col-sm-4 offset-md-4" style="text-align: center;">
+        <img src="images/vs.png" class="selection">
+    </div>
+ </div>
+<div class="row justify-content-md-center">
+    <div class="col-sm-4 offset-md-4" style="text-align: center;">
+    </div>
+    <div class="col-sm-4 offset-md-4" style="text-align: center;">
+        <img id = "computerSelection" src="images/question.png" class="selection">
+    </div>
+ </div>
+
+</body>
+</html>
