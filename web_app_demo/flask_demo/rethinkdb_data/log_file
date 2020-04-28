@@ -1,0 +1,15 @@
+2020-04-28T02:07:34.309195943 0.020003s notice: Recursively removing directory /home/akim/Desktop/resume/web_app_demo/flask_demo/rethinkdb_data/tmp
+2020-04-28T02:07:34.312894147 0.023702s notice: Initializing directory /home/akim/Desktop/resume/web_app_demo/flask_demo/rethinkdb_data
+2020-04-28T02:07:34.313009859 0.023816s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/akim/Desktop/resume/web_app_demo/flask_demo/rethinkdb_data' did not already exist or is empty.)
+2020-04-28T02:07:34.313048333 0.023854s notice: Running rethinkdb 2.4.0~0focal (CLANG 10.0.0 )...
+2020-04-28T02:07:34.314855449 0.025663s notice: Running on Linux 5.4.0-26-generic x86_64
+2020-04-28T02:07:34.314932748 0.025739s notice: Loading data from directory /home/akim/Desktop/resume/web_app_demo/flask_demo/rethinkdb_data
+2020-04-28T02:07:34.346453832 0.057260s info: Automatically using cache size of 1806 MB
+2020-04-28T02:07:34.347145391 0.057951s notice: Listening for intracluster connections on port 29015
+2020-04-28T02:07:34.348621774 0.059428s notice: Listening for client driver connections on port 28015
+2020-04-28T02:07:34.348702292 0.059508s notice: Listening for administrative HTTP connections on port 8080
+2020-04-28T02:07:34.348709510 0.059515s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2020-04-28T02:07:34.348715962 0.059522s notice: Listening on driver addresses: 127.0.0.1, ::1
+2020-04-28T02:07:34.348723715 0.059529s notice: Listening on http addresses: 127.0.0.1, ::1
+2020-04-28T02:07:34.348731600 0.059537s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2020-04-28T02:07:34.348737937 0.059544s notice: Server ready, "akim_ThinkPad_S3_Yoga_14_kyr" 18087ce9-d224-4cf1-8288-646616498f98
