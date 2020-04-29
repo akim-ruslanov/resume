@@ -13,3 +13,8 @@
 2020-04-28T02:07:34.348723715 0.059529s notice: Listening on http addresses: 127.0.0.1, ::1
 2020-04-28T02:07:34.348731600 0.059537s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2020-04-28T02:07:34.348737937 0.059544s notice: Server ready, "akim_ThinkPad_S3_Yoga_14_kyr" 18087ce9-d224-4cf1-8288-646616498f98
+2020-04-28T02:33:41.351020825 1567.061828s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2020-04-28T02:33:41.351259715 1567.062066s notice: Shutting down client connections...
+2020-04-28T02:33:41.351534342 1567.062340s notice: All client connections closed.
+2020-04-28T02:33:41.351550820 1567.062357s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2020-04-28T02:33:41.351985120 1567.062791s notice: Storage engine shut down.
